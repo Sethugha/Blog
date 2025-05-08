@@ -29,8 +29,18 @@ def delete(post_id):
     storage.delete_post(post_id)
     return redirect(url_for('index'))
 
-
-
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    data = storage.load_json('data.json')
+    for post in data:
+        if post['id'] == post_id:
+            if request.method == 'POST':
+                author = request.form['author']
+                title = request.form['title']
+                content = request.form.get('content', 'Lorem Ipsum')
+                storage.update_post(post_id, author, title, content)
+                return redirect(url_for('index'))
+            return render_template('update.html', post=post)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)

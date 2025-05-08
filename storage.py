@@ -28,11 +28,15 @@ def delete_post(id):
             save_json(data)
 
 
-def select_post(id):
+def update_post(post_id, author, title, content):
     data = load_json('data.json')
     for post in data:
-        if post['id'] == id:
-            return post
+        if post['id'] == post_id:
+            post['author'] = author
+            post['title'] = title
+            post['content'] = content
+            print(post)
+    save_json(data)
 
 
 def main():
