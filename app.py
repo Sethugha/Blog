@@ -1,3 +1,5 @@
+from readline import set_completer
+
 from flask import Flask, render_template, request, redirect, url_for
 import storage
 app = Flask(__name__)
@@ -22,6 +24,10 @@ def add():
     return render_template('add.html')
 
 
+@app.route('/delete/<int:post_id>')
+def delete(post_id):
+    storage.delete_post(post_id)
+    return redirect(url_for('index'))
 
 
 

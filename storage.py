@@ -24,7 +24,15 @@ def delete_post(id):
     data = load_json('data.json')
     for post in data:
         if post['id'] == id:
-            data.pop(post.index())
+            data.remove(post)
+            save_json(data)
+
+
+def select_post(id):
+    data = load_json('data.json')
+    for post in data:
+        if post['id'] == id:
+            return post
 
 
 def main():

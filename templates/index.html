@@ -16,19 +16,17 @@
         {% for post in data %}
 
     <div class="post">
-        <h2>{{ post['title'] }}</h2>
-            <form method=POST action={{ url_for('/delete/<int:post_id>') }}>
-                <input class="btn" type="submit" name="delete" value={{ post['id'] }}>
+        <h2>{{ post.title }}</h2>
+            <form action="/delete/{{ post.id }}">
+                <button type="submit" >Delete</button>
             </form>
-        <p><em>{{ post['author'] }}</em></p>
-        <p>{{ post['content'] }}</p>
+            <form action="/update/{{ post.id }}">
+                <button type="submit" >Update</button>
+            </form>
+        <p><em>{{ post.author }}</em></p>
+        <p>{{ post.content }}</p>
     </div>
          {% endfor %}
 
 </body>
 </html>
-
-<form action="{{ url_for('delete') }}" method=post>
-  <input type=hidden value="{{ post['id'] }}" name=post_to_delete />
-  <input type=submit />
-</form>
