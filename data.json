@@ -7,17 +7,17 @@
         "likes": 1
     },
     {
-        "id": 2,
-        "author": "Jane Doe",
-        "title": "Second Post",
-        "content": "This is another post.",
-        "likes": 3
-    },
-    {
         "id": 3,
         "author": "Der Könich",
-        "title": "saacht:",
-        "content": "Das burgbierfaß ist nich leer!",
+        "title": "Third Post:",
+        "content": "Das Burgbierfaß ist nicht leer!",
         "likes": 1
+    },
+    {
+        "id": 4,
+        "author": "King Arthur",
+        "title": "Camelot ist abgebrannt",
+        "content": "Wer von euch Blechmännern hat wieder den Fernseher angelassen in der feuchten Bude? Jetzt haben wir den Salat und Versicherungen werden erst in 1000 Jahren erfunden!\r\n\r\nJetzt reicht´s! Alle raus, Gral suchen, vielleicht können wir das Ding gegen eine neue Burg eintauschen.",
+        "likes": 4
     }
 ]

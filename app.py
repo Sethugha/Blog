@@ -17,8 +17,9 @@ def add():
         title = request.form['title']
         content = request.form.get('content','Lorem Ipsum')
         id = storage.get_highest_id() + 1
+        likes = 0
         data = storage.load_json('data.json')
-        data.append({'id': id, 'author': author, 'title': title, 'content': content})
+        data.append({'id': id, 'author': author, 'title': title, 'content': content, 'likes': likes})
         storage.save_json(data)
         return redirect(url_for('index'))
     return render_template('add.html')

@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form action="/add" method="post">
-      <input type="text" id="author" name="author" placeholder = "Enter your name" required>
-      <input type="text" id="title" name="title" placeholder="Title" required>
-      <input type="text" id="content" name="content" placeholder="Write some stuff...">
-      <input type="submit" value="post it!">
-</form>
+    <div class="container">
+        <form action="/add" method="post">
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author" placeholder = "Author" required><br>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" placeholder="Title" required><br>
+            <label for="content">Post:</label><br>
+            <textarea cols="50" rows="10" id="content" name="content" placeholder="Write some stuff..."></textarea><br>
+            <input type="submit" value="post it!">
+        </form>
+    </div>
 </body>
 </html>

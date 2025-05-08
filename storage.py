@@ -35,7 +35,6 @@ def update_post(post_id, author, title, content):
             post['author'] = author
             post['title'] = title
             post['content'] = content
-            print(post)
     save_json(data)
 
 

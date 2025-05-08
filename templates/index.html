@@ -16,8 +16,12 @@
         {% for post in data %}
 
     <div class="post">
+       <div class="container">
+
         <h2>{{ post.title }}</h2>
-            <p>Likes: {{ post.likes }}</p>
+
+        <p>Likes: {{ post.likes }}</p>
+
             <form action="/delete/{{ post.id }}">
                 <button type="submit" >Delete</button>
             </form>
@@ -26,6 +30,9 @@
             </form>
             <form action="/like/{{ post.id }}">
                 <button type="submit" >Like</button>
+            </form>
+       </div>
+
         <p><em>{{ post.author }}</em></p>
         <p>{{ post.content }}</p>
     </div>
