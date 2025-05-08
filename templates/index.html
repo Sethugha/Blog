@@ -17,12 +17,15 @@
 
     <div class="post">
         <h2>{{ post.title }}</h2>
+            <p>Likes: {{ post.likes }}</p>
             <form action="/delete/{{ post.id }}">
                 <button type="submit" >Delete</button>
             </form>
             <form action="/update/{{ post.id }}">
                 <button type="submit" >Update</button>
             </form>
+            <form action="/like/{{ post.id }}">
+                <button type="submit" >Like</button>
         <p><em>{{ post.author }}</em></p>
         <p>{{ post.content }}</p>
     </div>

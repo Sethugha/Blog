@@ -41,8 +41,8 @@ def update_post(post_id, author, title, content):
 
 def main():
     data = [
-        {'id': 1, 'author': 'John Doe', 'title': 'First Post', 'content': 'This is my first post.'},
-        {'id': 2, 'author': 'Jane Doe', 'title': 'Second Post', 'content': 'This is another post.'},
+        {'id': 1, 'author': 'John Doe', 'title': 'First Post', 'content': 'This is my first post.', 'likes': 0},
+        {'id': 2, 'author': 'Jane Doe', 'title': 'Second Post', 'content': 'This is another post.', 'likes': 0}
         ]
     save_json(data)
     get_highest_id()

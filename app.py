@@ -29,6 +29,7 @@ def delete(post_id):
     storage.delete_post(post_id)
     return redirect(url_for('index'))
 
+
 @app.route('/update/<int:post_id>', methods=['GET', 'POST'])
 def update(post_id):
     data = storage.load_json('data.json')
@@ -41,6 +42,17 @@ def update(post_id):
                 storage.update_post(post_id, author, title, content)
                 return redirect(url_for('index'))
             return render_template('update.html', post=post)
+
+
+@app.route('/like/<int:post_id>')
+def like(post_id):
+    data = storage.load_json('data.json')
+    for post in data:
+        if post['id'] == post_id:
+            post['likes'] += 1
+    storage.save_json(data)
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
